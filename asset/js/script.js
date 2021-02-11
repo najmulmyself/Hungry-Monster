@@ -12,13 +12,7 @@
 //     );
 
 
-    fetch('https://restcountries.eu/rest/v2/all')
-    .then(res => res.json())
-    .then(data => {
-        for (let i = 0; i < data.length; i++) {
-            const element = data[i];
-            if(element.name === 'Bangladesh'){
-                console.log(element.name)
-            }
-        }
-    });
+const submit = document.getElementById('submit').addEventListener('click', () => {
+    const input = document.getElementById('input-field').value;
+    console.log(input);
+})
