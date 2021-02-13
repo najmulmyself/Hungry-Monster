@@ -8,20 +8,31 @@ function getInput() {
     .then(data => {
             const mealsdata = data.meals;
             const mainDiv = document.getElementById('meal-area');
-            for (let i = 0; i < mealsdata.length; i++) {
-                const mealName = mealsdata[i];
-                // const mealId = mealName.idMeal;
-                const strMeal = mealName.strMeal;
+
+            mealsdata.forEach(element => {
                 const separateDiv = document.createElement('div');
                 const contryInfo = `
-                    <h3> ${strMeal} </h3>
-                    <h6>${mealName.idMeal}</h6>
+                <h3> ${element.strMeal} </h3>
+                <h6>${element.idMeal}</h6>
                 `
                 separateDiv.innerHTML = contryInfo;
                 mainDiv.appendChild(separateDiv);
+            });
+
+            // for (let i = 0; i < mealsdata.length; i++) {
+            //     const mealName = mealsdata[i];
+            //     // const mealId = mealName.idMeal;
+            //     const strMeal = mealName.strMeal;
+            //     const separateDiv = document.createElement('div');
+            //     const contryInfo = `
+            //         <h3> ${strMeal} </h3>
+            //         <h6>${mealName.idMeal}</h6>
+            //     `
+            //     separateDiv.innerHTML = contryInfo;
+            //     mainDiv.appendChild(separateDiv);
 
                 
-            }
+            // }
         }
     )
 }
