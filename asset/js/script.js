@@ -13,13 +13,11 @@ function getInput() {
                 // const mealId = mealName.idMeal;
                 const strMeal = mealName.strMeal;
                 const separateDiv = document.createElement('div');
-                const h2 = document.createElement('h2');
-                const h5 = document.createElement('h5');
-                h2.innerText = `Food: ${strMeal}`;
-                h5.innerText = `Id: ${mealName.idMeal}`;
-
-                separateDiv.appendChild(h5);
-                separateDiv.appendChild(h2);
+                const contryInfo = `
+                    <h3> ${strMeal} </h3>
+                    <h6>${mealName.idMeal}</h6>
+                `
+                separateDiv.innerHTML = contryInfo;
                 mainDiv.appendChild(separateDiv);
 
                 
